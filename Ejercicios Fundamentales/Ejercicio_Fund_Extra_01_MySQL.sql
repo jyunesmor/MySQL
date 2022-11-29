@@ -18621,7 +18621,7 @@ from estadistica
 inner join jugador
 on estadistica.jugador = jugador.codigo
 group by jugador.nombre
-order by jugador.nombre asc;
+order by SUM(estadistica.Puntos_por_partido) desc;
 
 /*  11. Mostrar el número de jugadores de cada equipo.   */
 select count(jugador.codigo) as 'Cantidad Jugadores Por Equipo' , jugador.nombre_equipo as 'Equipo' 
